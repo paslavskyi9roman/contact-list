@@ -23,4 +23,8 @@ export class UserService {
   addUser(user: User) {
     this.users.push(user)
   }
+
+  removeUser(id: number) {
+    this.users = this.users.filter(u => u.id !== id)
+  }
 }

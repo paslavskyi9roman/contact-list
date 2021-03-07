@@ -13,4 +13,8 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  removeUser(id: number) {
+    this.userService.removeUser(id)
+  }
+
 }
