@@ -14,10 +14,11 @@ export class UserService {
   constructor() { }
   
   addUser(user: Users) {
-    this.users.push(user)
+    this.users = [...this.users, user]
   }
 
   removeUser(id: number) {
     this.users = this.users.filter(u => u.id !== id)
   }
+
 }
