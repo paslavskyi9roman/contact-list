@@ -8,6 +8,7 @@ import { UsersComponent } from './users/users.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     CreateUserComponent,
     UsersComponent,
     WrapperComponent,
+    UserComponent,
     
   ],
   imports: [
