@@ -10,11 +10,15 @@ export class UsersComponent implements OnInit {
 
   constructor(public userService: UserService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
 
-  removeUser(id: number) {
+  removeUser(id: number) { 
     this.userService.removeUser(id)
   }
 
 }
+
+// винести юзер інтерфейс з сервісу
+// розбити юзерів на окремий компонент
+// не мапати з юзерсервісу

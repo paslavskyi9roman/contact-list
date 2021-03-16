@@ -1,12 +1,64 @@
-<div class="p-4">
-  <h1>Users list</h1>
-  <label for="firstName">First Name</label
-  ><input type="text" [(ngModel)]="firstName" id="firstName" class="m-2 mr-4" />
-  <label for="lastName">Last Name</label
-  ><input type="text" [(ngModel)]="lastName" id="lastName" class="m-2 mr-4" />
-  <label for="email">Email</label
-  ><input type="email" [(ngModel)]="email" id="email" class="m-2 mr-4" />
-  <label for="age">Age</label
-  ><input type="text" [(ngModel)]="age" id="age" class="m-2 mr-4" />
-  <button class="btn btn-primary" (click)="addUser()">Add</button>
+<div class="mx-auto w-25 p-3 text-center">
+  <button class="btn btn-primary" (click)="open(mymodal)">Add new user</button>
 </div>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add a new user :)</h4>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+
+  <div class="modal-body form-group">
+    <h2>Enter the data</h2>
+    <div>
+      <label for="firstName">First Name</label
+      ><input
+        type="text"
+        [(ngModel)]="firstName"
+        id="firstName"
+        class="form-control"
+      />
+    </div>
+    <div>
+      <label for="lastName">Last Name</label
+      ><input
+        type="text"
+        [(ngModel)]="lastName"
+        id="lastName"
+        class="form-control"
+      />
+    </div>
+    <div>
+      <label for="email">Email</label
+      ><input
+        type="email"
+        [(ngModel)]="email"
+        id="email"
+        class="form-control"
+      />
+    </div>
+    <div>
+      <label for="age">Age</label
+      ><input type="text" [(ngModel)]="age" id="age" class="form-control" />
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="modal.close('Save click')"
+      (click)="addUser()"
+    >
+      Add
+    </button>
+  </div>
+</ng-template>
