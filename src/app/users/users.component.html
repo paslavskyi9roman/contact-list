@@ -9,16 +9,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of userService.users">
-      <td>{{ user.firstName }}</td>
-      <td>{{ user.lastName }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.age }}</td>
-      <td>
-        <button class="btn btn-danger" (click)="removeUser(user.id)">
-          &times;
-        </button>
-      </td>
-    </tr>
+    <app-user></app-user>
   </tbody>
 </table>
