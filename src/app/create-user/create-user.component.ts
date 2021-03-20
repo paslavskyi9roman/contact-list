@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../shared/user.service'
-import { Users } from '../shared/user'
+import {Users} from '../shared/user'
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -27,7 +27,7 @@ export class CreateUserComponent implements OnInit {
       email: this.email,
       age: this.age,
     };
-    this.userService.addUser(user)
+     this.userService.addUser(user)
   }
 
   closeResult: string;
