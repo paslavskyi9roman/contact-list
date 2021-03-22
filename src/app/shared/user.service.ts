@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Users } from './user'
-import { Observable } from "rxjs";
-import { of } from 'rxjs';
+import { Observable, Subject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -13,21 +12,29 @@ export class UserService {
     {id: 3,firstName: 'Hanzo', lastName: 'Hasashi', email: 'hanzo.hasashi@gmail.com', age: 38},
     {id: 4,firstName: 'Sub', lastName: 'Hasashi', email: 'hanzo.hasashi@gmail.com', age: 38},
     {id: 5,firstName: 'Hanzo', lastName: 'Hasashi', email: 'hanzo.hasashi@gmail.com', age: 38},
-    {id: 6,firstName: 'Hanzo', lastName: 'Hasashi', email: 'hanzo.hasashi@gmail.com', age: 38},
   ]
 
-  constructor() { }
-  
-  getUsers = () => {
-    return this.users;
+  constructor() {
+   }
+
+   private observer = new Subject()
+
+  loadUsers() {
+    return this.users
+  } 
+
+  getUsers(): Observable<any> {
+    return this.observer.asObservable()
   }
 
-  addUser(user: Users) {
+  addUser(user: Users){
     this.users = [...this.users, user]
+    this.observer.next(this.users)
   }
 
   removeUser(id: number) {
     this.users = this.users.filter(u => u.id !== id)
+    this.observer.next(this.users)
   }
 }
 

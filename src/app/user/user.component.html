@@ -1,7 +1,11 @@
-<tr *ngFor="let user of users">
-  <td>{{ user.firstName }}</td>
-  <td>{{ user.lastName }}</td>
-  <td>{{ user.email }}</td>
-  <td>{{ user.age }}</td>
-  <button class="btn btn-danger" (click)="removeUser(user.id)">&times;</button>
-</tr>
+<table class="table mx-auto w-75">
+  <tr *ngFor="let user of users" [user]="user">
+    <td>{{ user.firstName }}</td>
+    <td>{{ user.lastName }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.age }}</td>
+    <button class="btn btn-danger" (click)="removeUser(user.id)">
+      &times;
+    </button>
+  </tr>
+</table>
