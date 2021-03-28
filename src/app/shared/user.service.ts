@@ -14,10 +14,17 @@ export class UserService {
     {id: 5, firstName: 'Hanzo', lastName: 'Hasashi', email: 'hanzo.hasashi@gmail.com', age: 38},
   ]
 
+  index;
+
   constructor() {
    }
 
    private observer = new Subject()
+
+   sendId(index) {
+    this.index = index
+    this.observer.next(this.users)
+   }
 
   loadUsers() {
     return this.users
@@ -29,6 +36,17 @@ export class UserService {
 
   addUser(user: Users){
     this.users = [...this.users, user]
+    this.observer.next(this.users)
+  }
+
+  editUser(newUser) {
+    this.users = this.users.map((user) => user.id === newUser.id ? newUser : user)
+    // this.users = this.users.map((user) => {
+    //   if (user.id === newUser.id) {
+    //     return newUser
+    //   } return user
+    // } )
+
     this.observer.next(this.users)
   }
 

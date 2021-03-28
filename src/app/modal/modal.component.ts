@@ -14,23 +14,43 @@ export class ModalComponent implements OnInit {
   email = ''
   age 
 
+  users: Users[];
+
   constructor(public userService: UserService, public dialog: MatDialog) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.displayUsers()
+    this.interactUsers()
+  }
+
+  displayUsers() {
+    this.users = this.userService.loadUsers()
+  }
+  
+  interactUsers() {
+    this.userService.getUsers()
+    .subscribe(users => this.users = [...users])
   }
 
   addUser() {
-    const user: Users = {
+    const user =  {
       id: ++this.id,
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
       age: this.age,
     };
-     this.userService.addUser(user)
+    this.userService.addUser(user)
   }
 
   editUser() {
-    console.log('UDPT')
+    const user = {
+      id: this.userService.index,
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+      age: this.age,
+    }
+    this.userService.editUser(user)
   }
 }
