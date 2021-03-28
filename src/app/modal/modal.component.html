@@ -38,11 +38,15 @@
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button type="button" class="btn btn-primary" (click)="addUser()">Add</button>
+  <button
+    type="button"
+    class="btn btn-primary m-2"
+    (click)="addUser()"
+    mat-dialog-close
+  >
+    Add
+  </button>
   <button type="button" class="btn btn-warning" (click)="editUser()">
     Edit
-  </button>
-  <button type="button" class="btn btn-danger" mat-button mat-dialog-close>
-    Cancel
   </button>
 </mat-dialog-actions>
