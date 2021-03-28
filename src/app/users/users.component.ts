@@ -10,10 +10,6 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void { 
   }
-
-
-}
-
-// ✔ винести юзер інтерфейс з сервісу
-// ✔ розбити юзера на окремий компонент
-// ✔ не мапати з юзерсервісу 
+ 
+ 
+} 

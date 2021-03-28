@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/user.service'
 import { Users } from '../shared/user'
 import { MatDialog } from '@angular/material/dialog';
-import { ModalService } from '../shared/modal.service';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
@@ -15,7 +14,7 @@ export class ModalComponent implements OnInit {
   email = ''
   age 
 
-  constructor(public userService: UserService, public dialog: MatDialog, private modalService: ModalService) { }
+  constructor(public userService: UserService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -33,7 +32,5 @@ export class ModalComponent implements OnInit {
 
   editUser() {
     console.log('UDPT')
-    
   }
-
 }
