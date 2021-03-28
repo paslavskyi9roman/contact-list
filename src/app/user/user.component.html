@@ -5,6 +5,9 @@
     <td>{{ user.lastName }}</td>
     <td>{{ user.email }}</td>
     <td>{{ user.age }}</td>
+    <button class="btn btn-warning" mat-button (click)="openDialog()">
+      EDIT
+    </button>
     <button class="btn btn-danger" (click)="removeUser(user.id)">
       &times;
     </button>

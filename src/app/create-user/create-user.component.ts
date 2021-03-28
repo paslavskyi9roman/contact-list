@@ -1,37 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/user.service'
 import { Users } from '../shared/user'
+import { MatDialog } from '@angular/material/dialog';
 import { ModalService } from '../shared/modal.service';
-
+import { ModalComponent } from '../modal/modal.component';
 @Component({
   selector: 'app-create-user',
   templateUrl: './create-user.component.html',
   styleUrls: ['./create-user.component.css']
 })
 export class CreateUserComponent implements OnInit {
-  firstName = ''
-  lastName = ''
-  email = ''
-  age 
-  id = this.userService.users.length
-
-  constructor(public userService: UserService, private modalService: ModalService) { }
+ 
+  constructor(public userService: UserService, public dialog: MatDialog, private modalService: ModalService) { }
   
   ngOnInit() {
   }
 
-  addUser() {
-    const user: Users = {
-      id: ++this.id,
-      firstName: this.firstName,
-      lastName: this.lastName,
-      email: this.email,
-      age: this.age,
-    };
-     this.userService.addUser(user)
-  }
+ 
+  openDialog() {
+    const dialogRef = this.dialog.open(ModalComponent);
 
-  open(content) {
-    this.modalService.open(content)
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

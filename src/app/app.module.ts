@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { UserComponent } from './user/user.component';
 import { ModalComponent } from './modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     WrapperComponent,
     UserComponent,
     ModalComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     FormsModule,
     BrowserAnimationsModule,
-
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

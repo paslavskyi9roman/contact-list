@@ -1,1 +1,48 @@
-<p>modal works!</p>
+<mat-dialog-content class="mat-typography">
+  <div>
+    <h2 mat-dialog-title>Add a new user :)</h2>
+    <div class="modal-body form-group">
+      <h2>Enter the data</h2>
+      <div>
+        <label for="firstName">First Name</label
+        ><input
+          type="text"
+          [(ngModel)]="firstName"
+          id="firstName"
+          class="form-control"
+        />
+      </div>
+      <div>
+        <label for="lastName">Last Name</label
+        ><input
+          type="text"
+          [(ngModel)]="lastName"
+          id="lastName"
+          class="form-control"
+        />
+      </div>
+      <div>
+        <label for="email">Email</label
+        ><input
+          type="email"
+          [(ngModel)]="email"
+          id="email"
+          class="form-control"
+        />
+      </div>
+      <div>
+        <label for="age">Age</label
+        ><input type="number" [(ngModel)]="age" id="age" class="form-control" />
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button type="button" class="btn btn-primary" (click)="addUser()">Add</button>
+  <button type="button" class="btn btn-warning" (click)="editUser()">
+    Edit
+  </button>
+  <button type="button" class="btn btn-danger" mat-button mat-dialog-close>
+    Cancel
+  </button>
+</mat-dialog-actions>
