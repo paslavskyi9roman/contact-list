@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../shared/user.service'
-import {Users} from '../shared/user'
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from '../shared/user.service'
+import { Users } from '../shared/user'
+import { ModalService } from '../shared/modal.service';
 
 @Component({
   selector: 'app-create-user',
@@ -13,15 +13,16 @@ export class CreateUserComponent implements OnInit {
   lastName = ''
   email = ''
   age 
+  id = this.userService.users.length
 
-  constructor(public userService: UserService, private modalService: NgbModal) { }
+  constructor(public userService: UserService, private modalService: ModalService) { }
   
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   addUser() {
     const user: Users = {
-      id: Math.floor(Math.random() * 999),
+      id: ++this.id,
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
@@ -30,23 +31,7 @@ export class CreateUserComponent implements OnInit {
      this.userService.addUser(user)
   }
 
-  closeResult: string;
-
   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
+    this.modalService.open(content)
   }
 }

@@ -1,5 +1,6 @@
 <table class="table mx-auto w-75">
   <tr *ngFor="let user of users" [user]="user">
+    <td>{{ user.id }}</td>
     <td>{{ user.firstName }}</td>
     <td>{{ user.lastName }}</td>
     <td>{{ user.email }}</td>
