@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/user.service'
 import { Users } from '../shared/user'
-import { MatDialog } from '@angular/material/dialog';
 import { ModalService } from '../shared/modal.service';
-import { ModalComponent } from '../modal/modal.component';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -13,7 +11,7 @@ export class UserComponent implements OnInit {
   
   users: Users[];
 
-  constructor(public userService: UserService,  public dialog: MatDialog) { }
+  constructor(public userService: UserService, public modalService: ModalService) { }
 
   ngOnInit() {
     this.displayUsers()
@@ -34,10 +32,6 @@ export class UserComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(ModalComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.modalService.openDialog()
   }
 }
