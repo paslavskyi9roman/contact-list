@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { UsersComponent } from './users/users.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './user/user.component';
 import { ModalComponent } from './modal/modal.component';
