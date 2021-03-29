@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css'],
+  styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
   id = this.userService.users.length;
@@ -37,7 +37,7 @@ export class ModalComponent implements OnInit {
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
-      age: this.age,
+      age: this.age
     };
     this.userService.addUser(user);
   }
@@ -48,7 +48,7 @@ export class ModalComponent implements OnInit {
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
-      age: this.age,
+      age: this.age
     };
     this.userService.editUser(user);
   }

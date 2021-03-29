@@ -36,7 +36,12 @@
             "prefix": "app",
             "style": "camelCase"
           }
-        ]
+        ],
+        "arrow-parens": ["error", "always"],
+        "curly": "error",
+        "indent": ["error", 2],
+        "semi": "error",
+        "space-before-blocks": "error"
       }
     },
     {

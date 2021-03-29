@@ -3,7 +3,7 @@ import { Users } from './user';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class UserService {
   users: Users[] = [
@@ -11,7 +11,7 @@ export class UserService {
     { id: 2, firstName: 'John', lastName: 'Wick', email: 'john.wich@gmail.com', age: 32 },
     { id: 3, firstName: 'Hanzo', lastName: 'Hasashi', email: 'hanzo.hasashi@gmail.com', age: 38 },
     { id: 4, firstName: 'Sub', lastName: 'Zero', email: 'sub.zero@gmail.com', age: 38 },
-    { id: 5, firstName: 'Hanzo', lastName: 'Hasashi', email: 'hanzo.hasashi@gmail.com', age: 38 },
+    { id: 5, firstName: 'Hanzo', lastName: 'Hasashi', email: 'hanzo.hasashi@gmail.com', age: 38 }
   ];
 
   index;
