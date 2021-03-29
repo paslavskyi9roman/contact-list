@@ -5,11 +5,7 @@
     <td>{{ user.lastName }}</td>
     <td>{{ user.email }}</td>
     <td>{{ user.age }}</td>
-    <button class="btn btn-warning m-2" (click)="openDialog(user.id)">
-      EDIT
-    </button>
-    <button class="btn btn-danger" (click)="removeUser(user.id)">
-      &times;
-    </button>
+    <button class="btn btn-warning m-2" (click)="openDialog(user.id)">EDIT</button>
+    <button class="btn btn-danger" (click)="removeUser(user.id)">&times;</button>
   </tr>
 </table>

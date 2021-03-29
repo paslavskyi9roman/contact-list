@@ -1,38 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../shared/user.service'
-import { Users } from '../shared/user'
+import { UserService } from '../shared/user.service';
+import { Users } from '../shared/user';
 import { ModalService } from '../shared/modal.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-  
   users: Users[];
 
-  constructor(public userService: UserService, public modalService: ModalService) { }
+  constructor(public userService: UserService, public modalService: ModalService) {}
 
   ngOnInit() {
-    this.displayUsers()
-    this.interactUsers()
+    this.displayUsers();
+    this.interactUsers();
   }
 
   displayUsers() {
-    this.users = this.userService.loadUsers()
-  }
-  
-  interactUsers() {
-    this.userService.getUsers()
-    .subscribe(users => this.users = [...users])
+    this.users = this.userService.loadUsers();
   }
 
-  removeUser(id: number) { 
-    this.userService.removeUser(id)
+  interactUsers() {
+    this.userService.getUsers().subscribe((users) => (this.users = [...users]));
+  }
+
+  removeUser(id: number) {
+    this.userService.removeUser(id);
   }
 
   openDialog(id) {
-    this.modalService.openDialog()
-    this.userService.sendId(id)
+    this.modalService.openDialog();
+    this.userService.sendId(id);
   }
 }

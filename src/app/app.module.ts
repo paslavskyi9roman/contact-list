@@ -14,23 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CreateUserComponent,
-    UsersComponent,
-    WrapperComponent,
-    UserComponent,
-    ModalComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatDialogModule,
-  ],
+  declarations: [AppComponent, CreateUserComponent, UsersComponent, WrapperComponent, UserComponent, ModalComponent],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, BrowserAnimationsModule, MatDialogModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

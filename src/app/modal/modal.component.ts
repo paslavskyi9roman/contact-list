@@ -1,46 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../shared/user.service'
-import { Users } from '../shared/user'
+import { UserService } from '../shared/user.service';
+import { Users } from '../shared/user';
 import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent implements OnInit {
-  id = this.userService.users.length
-  firstName = ''
-  lastName = ''
-  email = ''
-  age 
+  id = this.userService.users.length;
+  firstName = '';
+  lastName = '';
+  email = '';
+  age;
 
   users: Users[];
 
-  constructor(public userService: UserService, public dialog: MatDialog) { }
+  constructor(public userService: UserService, public dialog: MatDialog) {}
 
-  ngOnInit(): void { 
-    this.displayUsers()
-    this.interactUsers()
+  ngOnInit(): void {
+    this.displayUsers();
+    this.interactUsers();
   }
 
   displayUsers() {
-    this.users = this.userService.loadUsers()
+    this.users = this.userService.loadUsers();
   }
-  
+
   interactUsers() {
-    this.userService.getUsers()
-    .subscribe(users => this.users = [...users])
+    this.userService.getUsers().subscribe((users) => (this.users = [...users]));
   }
 
   addUser() {
-    const user =  {
+    const user = {
       id: ++this.id,
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
       age: this.age,
     };
-    this.userService.addUser(user)
+    this.userService.addUser(user);
   }
 
   editUser() {
@@ -50,7 +49,7 @@ export class ModalComponent implements OnInit {
       lastName: this.lastName,
       email: this.email,
       age: this.age,
-    }
-    this.userService.editUser(user)
+    };
+    this.userService.editUser(user);
   }
 }
