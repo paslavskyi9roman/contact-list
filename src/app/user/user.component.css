@@ -1,0 +1,12 @@
+tr {
+  display: flex;
+  justify-content: space-between;
+}
+
+td {
+  width: 100%;
+}
+
+.button-group {
+  display: flex;
+}

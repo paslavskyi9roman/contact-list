@@ -1,11 +1,13 @@
 <table class="table mx-auto w-75">
-  <tr *ngFor="let user of users" [user]="user">
+  <tr>
     <td>{{ user.id }}</td>
     <td>{{ user.firstName }}</td>
     <td>{{ user.lastName }}</td>
     <td>{{ user.email }}</td>
     <td>{{ user.age }}</td>
-    <button class="btn btn-warning m-2" (click)="openDialog(user.id)">EDIT</button>
-    <button class="btn btn-danger" (click)="removeUser(user.id)">&times;</button>
+    <div class="button-group">
+      <button class="btn btn-warning m-2" (click)="openDialog(user.id)">EDIT</button>
+      <button class="btn btn-danger" (click)="removeUser(user.id)"><mat-icon>home</mat-icon></button>
+    </div>
   </tr>
 </table>
