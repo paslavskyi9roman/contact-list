@@ -12,10 +12,11 @@ import { UserComponent } from './user/user.component';
 import { ModalComponent } from './modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [AppComponent, CreateUserComponent, UsersComponent, WrapperComponent, UserComponent, ModalComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, BrowserAnimationsModule, MatDialogModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, BrowserAnimationsModule, MatDialogModule, MatIconModule],
   providers: [],
   bootstrap: [AppComponent]
 })
