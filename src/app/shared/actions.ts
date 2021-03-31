@@ -1,4 +1,5 @@
-export interface ActionInterface {
-  header: string;
+export interface ActionsInterface {
+  title: string;
   button: string;
+  btnClass: string;
 }

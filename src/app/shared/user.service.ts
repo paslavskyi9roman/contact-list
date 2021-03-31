@@ -16,12 +16,19 @@ export class UserService {
 
   index;
 
+  user;
+
   private observer = new Subject();
 
   constructor() {}
 
   sendId(index) {
     this.index = index;
+    this.observer.next(this.users);
+  }
+
+  sendUser(user) {
+    this.user = user;
     this.observer.next(this.users);
   }
 
@@ -40,12 +47,6 @@ export class UserService {
 
   editUser(newUser) {
     this.users = this.users.map((user) => (user.id === newUser.id ? newUser : user));
-    // this.users = this.users.map((user) => {
-    //   if (user.id === newUser.id) {
-    //     return newUser
-    //   } return user
-    // } )
-
     this.observer.next(this.users);
   }
 

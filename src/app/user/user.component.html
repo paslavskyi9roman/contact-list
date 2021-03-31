@@ -1,12 +1,11 @@
 <table class="mx-auto w-75 table">
   <tr>
-    <td>{{ user.id }}</td>
-    <td>{{ user.firstName }}</td>
-    <td>{{ user.lastName }}</td>
+    <td class="td-name">{{ user.firstName }}</td>
+    <td class="td-name">{{ user.lastName }}</td>
     <td>{{ user.email }}</td>
     <td>{{ user.age }}</td>
     <div class="button-group">
-      <button class="btn btn-warning" (click)="openDialog(user.id)"><mat-icon>border_color</mat-icon></button>
+      <button class="btn btn-warning" (click)="openDialog(user)"><mat-icon>border_color</mat-icon></button>
       <button class="btn btn-danger" (click)="removeUser(user.id)"><mat-icon>delete</mat-icon></button>
     </div>
   </tr>
