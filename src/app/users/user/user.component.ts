@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { UserService } from '../shared/user.service';
-import { Users } from '../shared/user';
-import { ModalService } from '../shared/modal.service';
+import { UserService } from '../../shared/user.service';
+import { Users } from '../../shared/user';
+import { ModalService } from '../../shared/modal.service';
 
 @Component({
   selector: 'app-user',

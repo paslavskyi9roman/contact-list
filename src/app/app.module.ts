@@ -8,7 +8,7 @@ import { UsersComponent } from './users/users.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { UserComponent } from './user/user.component';
+import { UserComponent } from './users/user/user.component';
 import { ModalComponent } from './modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
