@@ -14,22 +14,18 @@ export class UserService {
     { id: 5, firstName: 'Hanzo', lastName: 'Hasashi', email: 'hanzo.hasashi@gmail.com', age: 38 }
   ];
 
-  index;
-
   user;
 
   private observer = new Subject();
 
   constructor() {}
 
-  sendId(index) {
-    this.index = index;
-    this.observer.next(this.users);
-  }
-
   sendUser(user) {
     this.user = user;
-    this.observer.next(this.users);
+  }
+
+  clearUser() {
+    this.user = null;
   }
 
   loadUsers() {

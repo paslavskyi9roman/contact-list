@@ -11,7 +11,6 @@ import { ActionsInterface } from '../shared/actions';
 })
 export class ModalComponent implements OnInit {
   id = this.userService.users.length;
-
   firstName = '';
   lastName = '';
   email = '';
@@ -70,7 +69,7 @@ export class ModalComponent implements OnInit {
 
   editUser() {
     const user = {
-      id: this.userService.index,
+      id: this.userService.user.id,
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,

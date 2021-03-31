@@ -21,7 +21,6 @@ export class UserComponent implements OnInit {
 
   openDialog(user) {
     this.modalService.openDialog();
-    this.userService.sendId(user.id);
     this.userService.sendUser(user);
   }
 }
