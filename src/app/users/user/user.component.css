@@ -1,10 +1,5 @@
-tr {
-  display: flex;
-  justify-content: space-between;
-}
-
 td {
-  width: 100%;
+  width: 25%;
 }
 
 .button-group {
