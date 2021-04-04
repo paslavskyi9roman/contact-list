@@ -14,10 +14,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { ACTION_CONFIG, ACTION_TOKEN } from './constants/modal.constants';
+import { WrapperModule } from './wrapper/wrapper.module';
 
 @NgModule({
   declarations: [AppComponent, CreateUserComponent, UsersComponent, WrapperComponent, UserComponent, ModalComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, BrowserAnimationsModule, MatDialogModule, MatIconModule],
+  imports: [BrowserModule, AppRoutingModule,
+    NgbModule, FormsModule, BrowserAnimationsModule, MatDialogModule, MatIconModule, WrapperModule],
   providers: [{ provide: ACTION_TOKEN, useValue: ACTION_CONFIG }],
   bootstrap: [AppComponent]
 })
