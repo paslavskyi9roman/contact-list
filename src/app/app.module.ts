@@ -7,19 +7,17 @@ import { CreateUserComponent } from './users/create-user/create-user.component';
 import { UsersComponent } from './users/users.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
 import { UserComponent } from './users/user/user.component';
-import { ModalComponent } from './modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+
 import { ACTION_CONFIG, ACTION_TOKEN } from './constants/modal.constants';
 import { WrapperModule } from './wrapper/wrapper.module';
 
 @NgModule({
-  declarations: [AppComponent, CreateUserComponent, UsersComponent, WrapperComponent, UserComponent, ModalComponent, WrapperComponent],
+  declarations: [AppComponent, CreateUserComponent, UsersComponent, WrapperComponent, UserComponent, WrapperComponent],
   imports: [BrowserModule, AppRoutingModule,
-    NgbModule, FormsModule, BrowserAnimationsModule, MatDialogModule, MatIconModule, WrapperModule],
+    NgbModule,  BrowserAnimationsModule, MatIconModule, WrapperModule],
   providers: [{ provide: ACTION_TOKEN, useValue: ACTION_CONFIG }],
   bootstrap: [AppComponent]
 })
