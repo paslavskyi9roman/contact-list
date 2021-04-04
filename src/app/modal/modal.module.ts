@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [ModalComponent],
   imports: [
-    CommonModule,  MatDialogModule, FormsModule
+    CommonModule, MatDialogModule, FormsModule
   ]
 })
-export class ModalModule { }
+export class ModalModule {}
