@@ -4,13 +4,15 @@ import { UserComponent } from './user/user.component';
 import { MatIconModule } from '@angular/material/icon';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { UsersComponent } from './users.component';
+import { NameTransformPipe } from './user/name-transform.pipe';
 
 
 @NgModule({
   declarations: [
     UserComponent,
     UsersComponent,
-    CreateUserComponent],
+    CreateUserComponent,
+    NameTransformPipe],
   imports: [
     CommonModule,
     MatIconModule
