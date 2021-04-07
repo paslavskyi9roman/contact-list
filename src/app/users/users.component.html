@@ -1,6 +1,9 @@
 <div class="header">
   <app-create-user></app-create-user>
-  <app-filter></app-filter>
+  <!-- <app-filter></app-filter> -->
+  <div class="filter d-flex m-2 align-items-center">
+    <input class="form-control m-2" type="search" name="filter" [(ngModel)]="query" placeholder="start typing to search user" />
+  </div>
 </div>
 <div class="table-responsive">
   <table class="table table-hover mx-auto w-75">
@@ -15,5 +18,5 @@
     </thead>
     <tbody></tbody>
   </table>
-  <app-user *ngFor="let user of users" [user]="user"></app-user>
+  <app-user *ngFor="let user of users | searchFilter: query" [user]="user"></app-user>
 </div>

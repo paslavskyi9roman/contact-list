@@ -16,9 +16,11 @@ export class UserService {
 
   user;
 
+  searchValue;
+
   private observer = new Subject();
 
-  constructor() {}
+  constructor() { }
 
   sendUser(user) {
     this.user = user;
@@ -35,6 +37,9 @@ export class UserService {
   getUsers(): Observable<any> {
     return this.observer.asObservable();
   }
+  findUsers(): Observable<any> {
+    return this.observer.asObservable();
+  }
 
   addUser(user: Users) {
     this.users = [...this.users, user];
@@ -49,5 +54,14 @@ export class UserService {
   removeUser(id: number) {
     this.users = this.users.filter((u) => u.id !== id);
     this.observer.next(this.users);
+  }
+
+
+
+  searchName(name) {
+    this.searchValue = name;
+    console.log(this.searchValue);
+    this.observer.next(this.searchValue);
+
   }
 }
