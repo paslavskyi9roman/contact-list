@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Users } from '../models/user';
 import { Observable, Subject } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class UserService {
 
   private observer = new Subject();
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore) { }
 
   sendUser(user) {
     this.user = user;
@@ -29,6 +30,46 @@ export class UserService {
   clearUser() {
     this.user = null;
   }
+
+  getUsersDoc(id) {
+    return this.firestore
+      .collection('users')
+      .doc(id)
+      .valueChanges();
+  }
+
+  getUserList() {
+    return this.firestore
+      .collection('users')
+      .snapshotChanges();
+  }
+
+  createUser(user: Users) {
+    return new Promise<any>((resolve, reject) => {
+      this.firestore
+        .collection('users')
+        .add(user)
+        .then((response) => { console.log(response); }, (error) => reject(error));
+    });
+  }
+
+  deleteUser(id) {
+    return this.firestore
+      .collection('users')
+      .doc(id)
+      .delete();
+  }
+
+  // updateUser(user: Users, id) {
+  //   return this.firestore
+  //     .collection('users')
+  //     .doc(id)
+  //     .update({
+  //       firstName,
+  //       email: user.email,
+  //       age: users.age
+  //     });
+  // }
 
   loadUsers() {
     return this.users;
@@ -51,17 +92,14 @@ export class UserService {
     this.observer.next(this.users);
   }
 
-  removeUser(id: number) {
-    this.users = this.users.filter((u) => u.id !== id);
-    this.observer.next(this.users);
-  }
-
-
+  // removeUser(id: number) {
+  //   this.users = this.users.filter((u) => u.id !== id);
+  //   this.observer.next(this.users);
+  // }
 
   searchName(name) {
     this.searchValue = name;
     console.log(this.searchValue);
     this.observer.next(this.searchValue);
-
   }
 }

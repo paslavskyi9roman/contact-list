@@ -13,11 +13,12 @@ export class UserComponent implements OnInit {
 
   constructor(public userService: UserService, public modalService: ModalService) { }
 
-  ngOnInit() { }
-
-  removeUser(id: number) {
-    this.userService.removeUser(id);
+  ngOnInit() {
   }
+
+  removeUser = (id: number) => {
+    this.userService.deleteUser(id);
+  };
 
   openDialog(user) {
     this.modalService.openDialog();

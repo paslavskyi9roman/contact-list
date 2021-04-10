@@ -18,6 +18,13 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.users = this.userService.loadUsers();
     this.interactUsers();
+
+    this.userService.getUserList().subscribe((res) => {
+      this.users = res.map((e) => ({
+        id: e.payload.doc.id,
+        ...e.payload.doc.data() as Users
+      } as Users));
+    });
   }
 
   interactUsers() {
