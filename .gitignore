@@ -11,7 +11,7 @@
 /node_modules
 
 #enviroment
-/environments
+src/environments
 .env
 
 # profiling files

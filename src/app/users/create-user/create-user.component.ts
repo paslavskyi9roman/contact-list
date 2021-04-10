@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../shared/user.service';
-import { ModalService } from '../../shared/modal.service';
+import { UserService } from '../../shared/services/user.service';
+import { ModalService } from '../../shared/services/modal.service';
 
 @Component({
   selector: 'app-create-user',
@@ -8,9 +8,9 @@ import { ModalService } from '../../shared/modal.service';
   styleUrls: ['./create-user.component.css']
 })
 export class CreateUserComponent implements OnInit {
-  constructor(public userService: UserService, public modalService: ModalService) {}
+  constructor(public userService: UserService, public modalService: ModalService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   openDialog() {
     this.modalService.openDialog();

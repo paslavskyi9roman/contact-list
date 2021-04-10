@@ -6,6 +6,7 @@ import { WrapperModule } from './wrapper/wrapper.module';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
@@ -20,7 +21,8 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule],
+    AngularFireStorageModule,
+    AngularFireDatabaseModule],
   providers: [],
   bootstrap: [AppComponent]
 })

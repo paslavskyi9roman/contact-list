@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { UserService } from '../shared/user.service';
-import { Users } from '../shared/user';
+import { UserService } from '../shared/services/user.service';
+import { Users } from '../shared/models/user';
 import { MatDialog } from '@angular/material/dialog';
 import { ACTION_TOKEN } from '../constants/modal.constants';
-import { ActionsInterface } from '../shared/actions';
+import { ActionsInterface } from '../shared/models/actions';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-modal',

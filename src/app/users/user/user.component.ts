@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { UserService } from '../../shared/user.service';
-import { Users } from '../../shared/user';
-import { ModalService } from '../../shared/modal.service';
+import { UserService } from '../../shared/services/user.service';
+import { Users } from '../../shared/models/user';
+import { ModalService } from '../../shared/services/modal.service';
 
 @Component({
   selector: 'app-user',
@@ -11,9 +11,9 @@ import { ModalService } from '../../shared/modal.service';
 export class UserComponent implements OnInit {
   @Input() user: Users;
 
-  constructor(public userService: UserService, public modalService: ModalService) {}
+  constructor(public userService: UserService, public modalService: ModalService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   removeUser(id: number) {
     this.userService.removeUser(id);

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { UserService } from '../../shared/user.service';
+import { UserService } from '../../shared/services/user.service';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
