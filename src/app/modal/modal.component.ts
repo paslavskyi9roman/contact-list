@@ -4,6 +4,7 @@ import { Users } from '../shared/user';
 import { MatDialog } from '@angular/material/dialog';
 import { ACTION_TOKEN } from '../constants/modal.constants';
 import { ActionsInterface } from '../shared/actions';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
@@ -22,11 +23,21 @@ export class ModalComponent implements OnInit {
 
   formActions: ActionsInterface;
 
+  myForm: FormGroup = new FormGroup({
+    firstName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
+    lastName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ]),
+    age: new FormControl('', Validators.required)
+  });
+
   constructor(
     public userService: UserService,
     public dialog: MatDialog,
     @Inject(ACTION_TOKEN) private config: { [name: string]: ActionsInterface }
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.user = this.userService.user;
