@@ -60,16 +60,18 @@ export class UserService {
       .delete();
   }
 
-  // updateUser(user: Users, id) {
-  //   return this.firestore
-  //     .collection('users')
-  //     .doc(id)
-  //     .update({
-  //       firstName,
-  //       email: user.email,
-  //       age: users.age
-  //     });
-  // }
+  updateUser(user: Users) {
+    console.log(user.id);
+    return this.firestore
+      .collection('users')
+      .doc(user.id)
+      .update({
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        age: user.age
+      });
+  }
 
   loadUsers() {
     return this.users;

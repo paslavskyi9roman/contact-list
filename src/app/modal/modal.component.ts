@@ -66,7 +66,6 @@ export class ModalComponent implements OnInit {
   addUser() {
     if (!this.user) {
       const user = {
-        id: ++this.id,
         firstName: this.firstName,
         lastName: this.lastName,
         email: this.email,
@@ -86,6 +85,6 @@ export class ModalComponent implements OnInit {
       email: this.email,
       age: this.age
     };
-    this.userService.editUser(user);
+    this.userService.updateUser(user);
   }
 }
