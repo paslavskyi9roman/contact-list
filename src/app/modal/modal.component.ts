@@ -72,7 +72,7 @@ export class ModalComponent implements OnInit {
         email: this.email,
         age: this.age
       };
-      this.userService.addUser(user);
+      this.userService.createUser(user);
     } else {
       this.editUser();
     }

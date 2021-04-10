@@ -82,10 +82,10 @@ export class UserService {
     return this.observer.asObservable();
   }
 
-  addUser(user: Users) {
-    this.users = [...this.users, user];
-    this.observer.next(this.users);
-  }
+  // addUser(user: Users) {
+  //   this.users = [...this.users, user];
+  //   this.observer.next(this.users);
+  // }
 
   editUser(newUser) {
     this.users = this.users.map((user) => (user.id === newUser.id ? newUser : user));
