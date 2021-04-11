@@ -5,7 +5,7 @@ import { UsersModule } from '../users/users.module';
 import { ModalModule } from '../modal/modal.module';
 import { WrapperComponent } from './wrapper.component';
 
-import { ACTION_CONFIG, ACTION_TOKEN } from '../constants/modal.constants';
+import { ACTION_CONFIG, ACTION_TOKEN } from '../shared/constants/modal.constants';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -23,4 +23,4 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   providers: [{ provide: ACTION_TOKEN, useValue: ACTION_CONFIG }],
   exports: [WrapperComponent]
 })
-export class WrapperModule {}
+export class WrapperModule { }

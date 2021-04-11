@@ -1,5 +1,5 @@
 import { InjectionToken } from '@angular/core';
-import { ActionsInterface } from '../shared/models/actions';
+import { ActionsInterface } from '../models/actions';
 
 export const ACTION_TOKEN = new InjectionToken<ActionsInterface>('action.config');
 export const ACTION_CONFIG: {
