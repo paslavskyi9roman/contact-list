@@ -16,9 +16,6 @@ export class UsersComponent implements OnInit {
   constructor(public userService: UserService) { }
 
   ngOnInit() {
-    this.users = this.userService.loadUsers();
-    this.interactUsers();
-
     this.userService.getUserList().subscribe((res) => {
       this.users = res.map((e) => ({
         id: e.payload.doc.id,
@@ -26,10 +23,4 @@ export class UsersComponent implements OnInit {
       } as Users));
     });
   }
-
-  interactUsers() {
-    this.userService.getUsers().subscribe((users) => (this.users = [...users]));
-  }
 }
-
-

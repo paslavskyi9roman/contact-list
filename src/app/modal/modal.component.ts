@@ -41,18 +41,10 @@ export class ModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.userService.user;
-    this.displayUsers();
-    this.interactUsers();
+
     this.setConfig();
   }
 
-  displayUsers() {
-    this.users = this.userService.loadUsers();
-  }
-
-  interactUsers() {
-    this.userService.getUsers().subscribe((users) => (this.users = [...users]));
-  }
 
   setConfig() {
     if (this.user) {

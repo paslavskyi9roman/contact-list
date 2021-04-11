@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Users } from '../models/user';
-import { Observable, Subject } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
@@ -17,11 +16,11 @@ export class UserService {
 
   user;
 
-  searchValue;
-
-  private observer = new Subject();
-
   constructor(private firestore: AngularFirestore) { }
+
+  getUser() {
+    return this.user;
+  }
 
   sendUser(user) {
     this.user = user;
@@ -61,7 +60,6 @@ export class UserService {
   }
 
   updateUser(user: Users) {
-    console.log(user.id);
     return this.firestore
       .collection('users')
       .doc(user.id)
@@ -71,37 +69,5 @@ export class UserService {
         email: user.email,
         age: user.age
       });
-  }
-
-  loadUsers() {
-    return this.users;
-  }
-
-  getUsers(): Observable<any> {
-    return this.observer.asObservable();
-  }
-  findUsers(): Observable<any> {
-    return this.observer.asObservable();
-  }
-
-  // addUser(user: Users) {
-  //   this.users = [...this.users, user];
-  //   this.observer.next(this.users);
-  // }
-
-  editUser(newUser) {
-    this.users = this.users.map((user) => (user.id === newUser.id ? newUser : user));
-    this.observer.next(this.users);
-  }
-
-  // removeUser(id: number) {
-  //   this.users = this.users.filter((u) => u.id !== id);
-  //   this.observer.next(this.users);
-  // }
-
-  searchName(name) {
-    this.searchValue = name;
-    console.log(this.searchValue);
-    this.observer.next(this.searchValue);
   }
 }
