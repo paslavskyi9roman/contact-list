@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { UserService } from '../shared/services/user.service';
 import { Users } from '../shared/models/user';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ACTION_TOKEN } from '../constants/modal.constants';
 import { ActionsInterface } from '../shared/models/actions';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -36,20 +36,23 @@ export class ModalComponent implements OnInit {
   constructor(
     public userService: UserService,
     public dialog: MatDialog,
-    @Inject(ACTION_TOKEN) private config: { [name: string]: ActionsInterface }
+    @Inject(ACTION_TOKEN) private config: { [name: string]: ActionsInterface },
+    @Inject(MAT_DIALOG_DATA) public data: ModalComponent
   ) { }
 
   ngOnInit(): void {
     this.user = this.userService.user;
-
     this.setConfig();
+    this.firstName = this.data.firstName;
+    this.lastName = this.data.lastName;
+    this.email = this.data.email;
+    this.age = this.data.age;
   }
 
 
   setConfig() {
     if (this.user) {
       this.formActions = this.config.edit;
-      console.log(this.user);
     } else {
       this.formActions = this.config.add;
     }

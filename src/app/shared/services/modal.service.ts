@@ -10,7 +10,9 @@ export class ModalService {
   constructor(public dialog: MatDialog, public userService: UserService) { }
 
   openDialog() {
-    const dialogRef = this.dialog.open(ModalComponent);
+    const dialogRef = this.dialog.open(ModalComponent, {
+      data: this.userService.getUser()
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
