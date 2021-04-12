@@ -3,18 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { UsersModule } from '../users/users.module';
 import { ModalModule } from '../modal/modal.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WrapperComponent } from './wrapper.component';
 
 import { ACTION_CONFIG, ACTION_TOKEN } from '../shared/constants/modal.constants';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutComponent } from '../pages/about/about.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
-  declarations: [WrapperComponent],
+  declarations: [WrapperComponent, AboutComponent],
   imports: [
     CommonModule,
     UsersModule,
+    AppRoutingModule,
     ModalModule,
     NgbModule,
     BrowserAnimationsModule
