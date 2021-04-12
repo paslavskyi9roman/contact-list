@@ -11,10 +11,11 @@ import { ACTION_CONFIG, ACTION_TOKEN } from '../shared/constants/modal.constants
 import { AboutComponent } from '../pages/about/about.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { HeaderComponent } from '../components/header/header.component';
+import { SigninComponent } from '../components/signin/signin.component';
 
 
 @NgModule({
-  declarations: [WrapperComponent, AboutComponent, HeaderComponent],
+  declarations: [WrapperComponent, AboutComponent, HeaderComponent, SigninComponent],
   imports: [
     CommonModule,
     UsersModule,
