@@ -1,0 +1,30 @@
+<div class="form">
+  <div class="formGroup">
+    <input type="text" class="form-control" placeholder="Username" #userName required />
+  </div>
+
+  <div class="formGroup">
+    <input type="password" class="form-control" placeholder="Password" #userPassword required />
+  </div>
+
+  <div class="formGroup">
+    <input
+      type="button"
+      class="btn btn-primary btn-block"
+      value="Sign in"
+      (click)="authService.signIn(userName.value, userPassword.value)"
+    />
+  </div>
+
+  <div class="formGroup">
+    <button type="button" class="btn btn-danger btn-block" (click)="authService.googleAuth()">Log in with Google</button>
+  </div>
+
+  <div class="forgotPassword">
+    <a href="/forgot-password">Forgot Password?</a>
+  </div>
+
+  <div class="redirectToLogin">
+    <span>Not registered yet? <a href="/sign-up">Register</a> </span>
+  </div>
+</div>

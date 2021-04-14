@@ -32,21 +32,21 @@ export class UserService {
 
   getUsersDoc(id) {
     return this.firestore
-      .collection('users')
+      .collection('contacts')
       .doc(id)
       .valueChanges();
   }
 
   getUserList() {
     return this.firestore
-      .collection('users')
+      .collection('contacts')
       .snapshotChanges();
   }
 
   createUser(user: Users) {
     return new Promise<any>((resolve, reject) => {
       this.firestore
-        .collection('users')
+        .collection('contacts')
         .add(user)
         .then((response) => { console.log(response); }, (error) => reject(error));
     });
@@ -54,14 +54,14 @@ export class UserService {
 
   deleteUser(id) {
     return this.firestore
-      .collection('users')
+      .collection('contacts')
       .doc(id)
       .delete();
   }
 
   updateUser(user: Users) {
     return this.firestore
-      .collection('users')
+      .collection('contacts')
       .doc(user.id)
       .update({
         firstName: user.firstName,

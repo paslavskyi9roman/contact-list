@@ -1,0 +1,21 @@
+<div class="form">
+  <div class="formGroup">
+    <input type="email" class="form-control" placeholder="Email Address" #userEmail required />
+  </div>
+
+  <div class="formGroup">
+    <input type="password" class="form-control" placeholder="Password" #userPwd required />
+  </div>
+
+  <div class="formGroup">
+    <input type="button" class="btn btn-primary btn-block" value="Sign Up" (click)="authService.signUp(userEmail.value, userPwd.value)" />
+  </div>
+
+  <div class="formGroup">
+    <button type="button" class="btn btn-danger btn-block g-signin2" (click)="authService.googleAuth()">Continue with Google</button>
+
+    <div class="redirectToLogin">
+      <span>Already have an account? <a href="/sign-in">Log In</a></span>
+    </div>
+  </div>
+</div>
