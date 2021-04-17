@@ -7,7 +7,7 @@ import { VerifyEmailComponent } from './components/auth/verify-email/verify-emai
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AuthGuard } from './shared/auth.guard';
-import { UsersComponent } from './users/users.component';
+import { UsersComponent } from './pages/users/users.component';
 
 const routes: Routes = [
   { path: '', component: UsersComponent, pathMatch: 'full' },

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UsersModule } from '../users/users.module';
+import { UsersModule } from '../pages/users/users.module';
 import { ModalModule } from '../components/modal/modal.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';

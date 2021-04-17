@@ -7,8 +7,8 @@ import { UserComponent } from './user/user.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { UsersComponent } from './users.component';
 
-import { NameTransformPipe } from '../shared/pipes/name-transform.pipe';
-import { FilterPipe } from '../shared/pipes/filter.pipe';
+import { NameTransformPipe } from '../../shared/pipes/name-transform.pipe';
+import { FilterPipe } from '../../shared/pipes/filter.pipe';
 
 
 @NgModule({
