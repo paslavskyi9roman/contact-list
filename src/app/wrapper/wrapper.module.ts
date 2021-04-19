@@ -5,13 +5,13 @@ import { UsersModule } from '../pages/users/users.module';
 import { ModalModule } from '../components/modal/modal.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { WrapperComponent } from './wrapper.component';
+import { AuthModule } from '../components/auth/auth.module';
 
 import { ACTION_CONFIG, ACTION_TOKEN } from '../shared/constants/modal.constants';
+import { WrapperComponent } from './wrapper.component';
 import { AboutComponent } from '../pages/about/about.component';
-import { AppRoutingModule } from '../app-routing.module';
 import { HeaderComponent } from '../components/header/header.component';
-import { AuthModule } from '../components/auth/auth.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
